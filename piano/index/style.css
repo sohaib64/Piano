@@ -1,0 +1,163 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(135deg, #153677, #4e085f);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.heading {
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    padding: 20px;
+}
+
+.piano {
+    position: relative;
+    display: flex;
+    border-radius: 15px;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+button {
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding-bottom: 10px;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+}
+
+#white {
+    background: linear-gradient(#fff 96%, #eee 4%);
+    color: black;
+    width: 60px;
+    height: 200px;
+    border: 1px solid #ccc;
+    margin-right: -1px;
+    transition: transform 0.2s ease, background-color 0.3s ease;
+}
+
+#black {
+    background-color: black;
+    color: white;
+    width: 40px;
+    height: 120px;
+    position: absolute;
+    top: 0;
+    z-index: 1;
+    border-radius: 0 0 20px 20px;
+}
+
+.Cs_note { left: 45px; }
+.Ds_note { left: 105px; }
+.Fs_note { left: 225px; }
+.Gs_note { left: 285px; }
+.As_note { left: 345px; }
+
+#white:hover {
+    background: linear-gradient(#87CEEB 96%, #70a3d0 4%);
+    color: #fff;
+    transform: scale(1.05);
+}
+
+#black:hover {
+    background-color: #FFD700;
+    color: #fff;
+    transform: scale(1.05);
+}
+
+/* Responsive Styles for Portrait Mode */
+@media (max-width: 600px) {
+    .piano {
+        transform: scale(0.8);
+    }
+}
+
+@media (max-width: 400px) {
+    .piano {
+        transform: scale(0.7);
+    }
+    .heading {
+        font-size: 18px;
+    }
+}
+
+/* Responsive Styles for Landscape Mode */
+@media (max-height: 600px) and (orientation: landscape) {
+    body {
+        padding: 10px;
+        justify-content: flex-start;
+    }
+
+    .piano {
+        transform: scale(0.9);
+        margin-top: 20px;
+    }
+
+    #white {
+        width: 50px;
+        height: 150px;
+    }
+
+    #black {
+        width: 30px;
+        height: 90px;
+    }
+
+    .Cs_note { left: 35px; }
+    .Ds_note { left: 85px; }
+    .Fs_note { left: 165px; }
+    .Gs_note { left: 210px; }
+    .As_note { left: 255px; }
+
+    .heading {
+        font-size: 20px;
+        padding: 10px;
+    }
+}
+
+@media (max-height: 400px) and (orientation: landscape) {
+    .piano {
+        transform: scale(0.8);
+    }
+
+    #white {
+        width: 40px;
+        height: 120px;
+    }
+
+    #black {
+        width: 25px;
+        height: 70px;
+    }
+
+    .Cs_note { left: 30px; }
+    .Ds_note { left: 70px; }
+    .Fs_note { left: 140px; }
+    .Gs_note { left: 180px; }
+    .As_note { left: 220px; }
+
+    .heading {
+        font-size: 18px;
+        padding: 5px;
+    }
+}
